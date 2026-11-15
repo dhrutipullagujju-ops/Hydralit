@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f8f4">
+  <title>Hydralit — Water reminders</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell" id="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Hydralit home"><img class="brand-mark" src="assets/hydralit-mascot.svg" alt=""><span>Hydralit</span></a>
+      <div class="today"><svg class="date-drop" viewBox="0 0 20 26" aria-hidden="true"><path d="M10 1C8 6 2 13 2 17a8 8 0 0 0 16 0c0-4-6-11-8-16Z" fill="#9BDCE8" stroke="#438EAA" stroke-width="1.5"/><path d="M6 17c0 2 1 3 2 4" fill="none" stroke="#F7FFFF" stroke-width="1.7" stroke-linecap="round"/></svg><span id="date-label"></span><span class="user-name" id="user-name"></span><button class="sign-out" id="sign-out" type="button">Sign out</button></div>
+    </header>
+    <div class="left-water-decor" aria-hidden="true">
+      <svg class="left-drop drop-a" viewBox="0 0 28 38"><path d="M14 2C11 9 3 18 3 25a11 11 0 0 0 22 0C25 18 17 9 14 2Z" fill="#B9E8F0" stroke="#78BFCF" stroke-width="1.5"/><path d="M8 25c0 3 1 5 3 6" stroke="#F5FFFF" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="left-drop drop-b" viewBox="0 0 28 38"><path d="M14 2C11 9 3 18 3 25a11 11 0 0 0 22 0C25 18 17 9 14 2Z" fill="#D8EAF4" stroke="#9ABFD4" stroke-width="1.5"/><path d="M8 25c0 3 1 5 3 6" stroke="#FFF" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="left-drop drop-c" viewBox="0 0 28 38"><path d="M14 2C11 9 3 18 3 25a11 11 0 0 0 22 0C25 18 17 9 14 2Z" fill="#C8EDE6" stroke="#8BC8BC" stroke-width="1.5"/><path d="M8 25c0 3 1 5 3 6" stroke="#F8FFFD" stroke-width="2" stroke-linecap="round"/></svg>
+    </div>
+
+    <section class="intro">
+      <p class="eyebrow">HYDRATION CLUB · EST. TODAY</p>
+      <h1><em>A LITTLE SIP</em><br>A LOT OF GOOD.</h1>
+      <p class="subhead" id="welcome-copy">Catch a wave of good habits, one sip at a time.</p>
+    </section>
+
+    <section class="dashboard">
+      <article class="card progress-card">
+        <div class="card-head"><div><p class="label">TODAY’S PROGRESS</p><h2><span id="drank">0</span><span class="muted"> / <span id="goal-display">8</span> glasses</span></h2></div><label class="goal-picker" for="goal-input">Daily goal <input id="goal-input" type="number" min="1" step="1" aria-label="Daily glass goal"></label></div>
+        <div class="progress-track" role="progressbar" aria-label="Today's water goal" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0"><div id="progress-fill"></div></div>
+        <div class="progress-meta"><span id="progress-caption">Every glass is a good start.</span><span id="percent">0%</span></div>
+        <div class="glass-row" id="glass-row" aria-label="Glasses of water"></div>
+        <div class="quick-actions"><button id="add-glass" class="button button-primary" type="button"><span aria-hidden="true">＋</span> Log a glass</button><button id="undo-glass" class="button button-quiet" type="button" disabled>Undo</button></div>
+        <p class="glass-note">One glass = 250 ml <span>·</span> Your progress saves on this device</p>
+      </article>
+
+      <aside class="side-column">
+        <div class="cup-stage">
+          <svg class="flower-decor flower-left" viewBox="0 0 40 60" aria-hidden="true"><path d="M19 25c0 12 2 22 3 32" stroke="#789C79" stroke-width="2" stroke-linecap="round"/><path d="M21 43c-9-8-12-3-7 1 3 2 5 2 7-1Zm1 7c8-8 12-4 7 0-3 2-5 2-7 0Z" fill="#A4C68C"/><g fill="#F2A8B5"><ellipse cx="19" cy="17" rx="4" ry="7"/><ellipse cx="19" cy="17" rx="4" ry="7" transform="rotate(72 19 17)"/><ellipse cx="19" cy="17" rx="4" ry="7" transform="rotate(144 19 17)"/><ellipse cx="19" cy="17" rx="4" ry="7" transform="rotate(216 19 17)"/><ellipse cx="19" cy="17" rx="4" ry="7" transform="rotate(288 19 17)"/></g><circle cx="19" cy="17" r="3" fill="#F7D98C"/></svg>
+          <svg class="flower-decor flower-right" viewBox="0 0 40 60" aria-hidden="true"><path d="M19 25c0 12 2 22 3 32" stroke="#789C79" stroke-width="2" stroke-linecap="round"/><path d="M21 43c-9-8-12-3-7 1 3 2 5 2 7-1Zm1 7c8-8 12-4 7 0-3 2-5 2-7 0Z" fill="#A4C68C"/><g fill="#F2A8B5"><ellipse cx="19" cy="17" rx="4" ry="7"/><ellipse cx="19" cy="17" rx="4" ry="7" transform="rotate(72 19 17)"/><ellipse cx="19" cy="17" rx="4" ry="7" transform="rotate(144 19 17)"/><ellipse cx="19" cy="17" rx="4" ry="7" transform="rotate(216 19 17)"/><ellipse cx="19" cy="17" rx="4" ry="7" transform="rotate(288 19 17)"/></g><circle cx="19" cy="17" r="3" fill="#F7D98C"/></svg>
+          <svg class="flower-decor flower-little" viewBox="0 0 40 60" aria-hidden="true"><path d="M19 25c0 12 2 22 3 32" stroke="#789C79" stroke-width="2" stroke-linecap="round"/><path d="M21 43c-9-8-12-3-7 1 3 2 5 2 7-1Zm1 7c8-8 12-4 7 0-3 2-5 2-7 0Z" fill="#A4C68C"/><g fill="#F2A8B5"><ellipse cx="19" cy="17" rx="4" ry="7"/><ellipse cx="19" cy="17" rx="4" ry="7" transform="rotate(72 19 17)"/><ellipse cx="19" cy="17" rx="4" ry="7" transform="rotate(144 19 17)"/><ellipse cx="19" cy="17" rx="4" ry="7" transform="rotate(216 19 17)"/><ellipse cx="19" cy="17" rx="4" ry="7" transform="rotate(288 19 17)"/></g><circle cx="19" cy="17" r="3" fill="#F7D98C"/></svg>
+          <span class="float-bubble bubble-one" aria-hidden="true"></span>
+          <span class="float-bubble bubble-two" aria-hidden="true"></span>
+          <span class="float-bubble bubble-three" aria-hidden="true"></span>
+          <svg class="cup-illustration" viewBox="0 0 160 230" role="img" aria-label="Illustration of a floral water tumbler with a bow">
+            <defs>
+              <linearGradient id="cupBody" x1="0" x2="1"><stop stop-color="#FFF4F5"/><stop offset=".52" stop-color="#F9E8F0"/><stop offset="1" stop-color="#EDE4F8"/></linearGradient>
+              <linearGradient id="cupLid" x1="0" x2="1"><stop stop-color="#DDF4EC"/><stop offset=".5" stop-color="#F4FFFA"/><stop offset="1" stop-color="#CBE9E5"/></linearGradient>
+              <filter id="cupShadow" x="-30%" y="-20%" width="160%" height="160%"><feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#8E7180" flood-opacity=".16"/></filter>
+              <g id="tinyFlower"><path d="M0 4v15" stroke="#789C79" stroke-width="1.5" stroke-linecap="round"/><path d="M0 12c-4-5-6-1-1 1M0 15c4-5 6-1 1 1" fill="#A4C68C"/><g fill="#F2A8B5"><circle cy="1" r="2.5"/><circle cx="-3" cy="3" r="2.4"/><circle cx="3" cy="3" r="2.4"/><circle cy="5" r="2.2"/></g><circle cy="3" r="1.2" fill="#F7D98C"/></g>
+            </defs>
+            <path d="M119 79h15c10 0 16 7 16 16v53c0 9-6 16-16 16h-17" fill="none" stroke="#f8f0df" stroke-width="12" stroke-linecap="round"/>
+            <path d="M119 79h15c10 0 16 7 16 16v53c0 9-6 16-16 16h-17" fill="none" stroke="#C5A9B4" stroke-width="2" stroke-linecap="round"/>
+            <g filter="url(#cupShadow)">
+              <path d="M60 13h7v62h-7z" rx="3" fill="#FFF8F1" stroke="#C5A9B4" stroke-width="1.5"/>
+              <rect x="26" y="67" width="99" height="19" rx="7" fill="url(#cupLid)" stroke="#8DBAB2" stroke-width="2"/>
+              <rect x="31" y="82" width="89" height="7" rx="2" fill="#D6B8C1"/>
+              <path d="M32 89h87l-7 116q-1 11-12 11H51q-11 0-12-11L32 89Z" fill="url(#cupBody)" stroke="#C5A9B4" stroke-width="2"/>
+              <path d="M36 91h79" stroke="#fffdf5" stroke-width="3" opacity=".8"/>
+              <g opacity=".95">
+                <use href="#tinyFlower" x="48" y="111"/><use href="#tinyFlower" x="91" y="102"/><use href="#tinyFlower" x="68" y="137"/><use href="#tinyFlower" x="105" y="150"/><use href="#tinyFlower" x="47" y="168"/><use href="#tinyFlower" x="82" y="183"/><use href="#tinyFlower" x="106" y="195"/>
+              </g>
+              <path d="M48 125q30 15 57 0" fill="none" stroke="#fdf9ec" stroke-width="2" opacity=".8"/>
+            </g>
+            <path d="M132 61c-8-10-17-10-17-4 0 5 7 8 17 8-9 5-12 12-7 14 5 2 10-4 13-12 4 9 12 12 15 7 3-5-3-10-12-12 9-3 14-10 9-13-5-3-12 3-15 10-1-9-8-15-13-11-4 4 0 10 10 13Z" fill="#F4B0BF" stroke="#D4879A" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M139 79v10" stroke="#c39a55" stroke-width="2"/><circle cx="139" cy="93" r="4" fill="#f7e2a8" stroke="#c39a55" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </aside>
+    </section>
+    <section class="history-layout" aria-label="Monthly hydration history">
+      <section class="graph-card card" aria-labelledby="graph-title">
+        <div class="graph-header"><div><p class="label">HYDRATION TRENDS</p><h2 id="graph-title">Progress graph</h2></div><div class="graph-tools"><div class="graph-periods" role="group" aria-label="Graph time period"><button data-graph-period="week" type="button" aria-pressed="false">Week</button><button class="active" data-graph-period="month" type="button" aria-pressed="true">Month</button><button data-graph-period="year" type="button" aria-pressed="false">Year</button></div><span class="graph-goal-key"><i></i><span id="graph-goal-label">Daily goal</span></span></div></div>
+        <div id="progress-chart" class="progress-chart" role="img" aria-label="Daily glasses of water compared with goal"></div>
+      </section>
+      <section class="calendar-card card" aria-labelledby="calendar-title">
+        <div class="calendar-header">
+          <div><p class="label">YOUR HYDRATION HISTORY</p><h2 id="calendar-title">Monthly calendar</h2></div>
+          <div class="calendar-controls"><button id="calendar-prev" class="calendar-nav" type="button" aria-label="Previous month">‹</button><div class="calendar-month" id="calendar-month" aria-live="polite"></div><button id="calendar-next" class="calendar-nav" type="button" aria-label="Next month">›</button></div>
+        </div>
+        <div class="calendar-grid" role="grid" aria-label="Hydration history calendar">
+          <div class="weekday">SUN</div><div class="weekday">MON</div><div class="weekday">TUE</div><div class="weekday">WED</div><div class="weekday">THU</div><div class="weekday">FRI</div><div class="weekday">SAT</div>
+          <div class="calendar-days" id="calendar-days"></div>
+        </div>
+        <div class="calendar-footer"><span><i class="legend-dot goal-met"></i> Goal reached</span><span><i class="legend-dot goal-started"></i> Logged water</span><span id="calendar-summary"></span></div>
+      </section>
+    </section>
+    <footer>TAKE IT ONE SIP AT A TIME <span>·</span> YOU’RE DOING GREAT</footer>
+  </main>
+  <dialog id="water-check-dialog" class="water-check-dialog" aria-labelledby="water-check-title">
+    <div class="check-header"><div><p class="label">OPTIONAL SIP CHECK</p><h2 id="water-check-title">Log a glass</h2></div><button id="close-water-check" class="check-close" type="button" aria-label="Close camera check">×</button></div>
+    <div class="recognition-frame"><video id="camera-preview" class="camera-preview" playsinline muted></video><canvas id="recognition-overlay" aria-hidden="true"></canvas></div>
+    <p id="camera-status" class="camera-status" role="status">Turn on your camera for a live sip check. Video is analyzed on this device and isn’t saved.</p>
+    <div class="camera-actions">
+      <button id="confirm-sip-check" class="button button-primary" type="button" disabled>Log this glass</button>
+      <button id="log-without-camera" class="camera-fallback" type="button" hidden>Log without camera</button>
+    </div>
+    <p class="camera-privacy">Camera access starts only after you tap Log a glass. Hydralit looks for a person and a cup or bottle near the face; this is an estimate, not proof of drinking.</p>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
